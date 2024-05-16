@@ -1,5 +1,5 @@
 const express = require('express')
-const {getProspecto,getUnProspecto,postProspecto,putProspecto,deleteProspecto} = require('../Controladores/rutaProspecto')
+const {getProspecto,getUnProspecto,postProspecto,putProspecto,deleteProspecto} = require('../Controladores/contraladorProspecto')
 
 const router = express.Router()
 

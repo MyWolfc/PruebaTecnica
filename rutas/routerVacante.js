@@ -1,5 +1,5 @@
 const express = require('express')
-const { getVacante,getUnaVacante,postVacante,putVacante,deleteVacante } = require('../Controladores/rutaVacante')
+const { getVacante,getUnaVacante,postVacante,putVacante,deleteVacante } = require('../Controladores/controladorVacante')
 
 const router = express.Router()
 
