@@ -1,5 +1,10 @@
 # Prueba tecnica Documentacion
 
+## Documentacion de la API
+
+*La documentacion de la API se realizo con ayuda swagger y se encuentra la ruta http://localhost:8081/api-docs/#*
+
+
 ## Descomposición del código en estructuras y algoritmos para reducir su complejidad
 
 Para la descomposicion del codigo partimos con MVC (modelo-vista-contralador) teniendo en cuenta la siguiente.
