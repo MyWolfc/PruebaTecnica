@@ -1,9 +1,11 @@
 const { Sequelize } = require('sequelize');
+const configenv = require('dotenv')
 
-const baseDatos = new Sequelize('entrevista', 'sa', 'Juan2000', {
+configenv.config()
+const baseDatos = new Sequelize(process.env.BD, process.env.user, process.env.pass, {
   dialect: 'mssql',
-  host: 'localhost', 
-  port: 49173, 
+  host: process.env.host, 
+  port: process.env.port, 
   omitNull:false,
   pool: {
     max: 5,
