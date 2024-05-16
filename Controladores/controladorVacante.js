@@ -13,7 +13,12 @@ const getUnaVacante = async (req,res) =>{
     try{
         const idV = req.params.id
         const VacanteConsultaEspecif = await Vacante.findByPk(idV)
-        res.json(VacanteConsultaEspecif)
+        if(VacanteConsultaEspecif){
+            res.json(VacanteConsultaEspecif)
+        }
+        else{
+            res.status(400).json({ message: 'No se ha encontrado la vacante con ese id' })
+        }
     } catch(error){
         res.status(500).json({ message: error });
     }

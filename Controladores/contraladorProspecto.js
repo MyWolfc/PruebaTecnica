@@ -13,9 +13,14 @@ const getUnProspecto = async (req,res) =>{
     try{
         const idProspecto = req.params.id
         const ProspectoConsultaEspecif = await Prospecto.findByPk(idProspecto)
-        res.json(ProspectoConsultaEspecif)
+        if(ProspectoConsultaEspecif){
+            res.json(ProspectoConsultaEspecif)
+        }
+        else{
+            res.status(400).json({ message: 'No se ha encontrado ese prospecto con ese id' })
+        }
     } catch(error){
-        res.status(500).json({ message: error})
+        res.status(500).json({ message: error })
     }
 }
 

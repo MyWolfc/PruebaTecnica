@@ -14,7 +14,12 @@ const getUnoEntrevista = async (req,res) => {
     try{
         const idE = req.params.id
         const entrevistaConsultaEspecif = await Entrevista.findByPk(idE)
-        res.json(entrevistaConsultaEspecif)
+        if(entrevistaConsultaEspecif){
+            res.json(entrevistaConsultaEspecif)
+        }
+        else{
+            res.status(400).json({ message: 'No se ha encontrado la entrevista con ese id' })
+        }
     } catch (error)
     {
         res.status(500).json({ message: error });
@@ -54,7 +59,7 @@ const putEntrevista = async (req,res) =>{
             res.json({ message: 'Se han guadrado las modificaciones' })
         }
         else{
-            res.status(404).json({ message:'No se han encontrado la entrevista con ese ID' })
+            res.status(404).json({ message: 'No se han encontrado la entrevista con ese ID' })
         }
     } catch(error){
         res.status(500).json({ message: error })
